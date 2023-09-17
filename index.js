@@ -28,6 +28,11 @@ app.use(cookieParser());
 app.use("/api/users", userRoutes);
 app.use("/api/posts", postRoutes);
 
-
-
+app.get("/", (req, res) => {
+    res.send({
+           status: 'success',
+           status_code: 200,
+           message: 'server is running successfully.'
+    });
+});
 app.listen(PORT, () => console.log(`Server started at http://localhost:${PORT}`));
